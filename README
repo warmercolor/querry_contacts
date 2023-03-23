@@ -1,0 +1,11 @@
+você pode utilizar as seguintes rotas para interagir com a API:
+
+- `GET /users` - Lista todos os usuários cadastrados
+- `GET /users/:id` - Busca um usuário pelo ID
+- `POST /users` - Cria um novo usuário
+- `PUT /users/:id` - Atualiza um usuário pelo ID
+- `DELETE /users/:id` - Exclui um usuário pelo ID
+- `POST /users/:id/contacts` - Cria um contato para um usuário pelo ID
+- `GET /users/:id/contacts` - Lista todos os contatos de um usuário pelo ID
+
+Você pode testar a API utilizando um cliente REST como o Postman ou Insomnia.
