@@ -1,13 +1,15 @@
 import { Header } from '../../components/Header';
 import { InputSearch } from './../../components/InputSearch/index';
-import { Card } from '../../components/Cards';
+import { ListContacts } from './../../components/ListContacts/index';
 
 
 export const Contacts = () => {
   return (
+    <>
     <Header>
       <InputSearch/>
-      <Card/>
     </Header>
+    <ListContacts/>
+    </>
   )
 }

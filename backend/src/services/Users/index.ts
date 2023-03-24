@@ -1,6 +1,5 @@
 import { hash } from "bcryptjs";
 import AppDataSource from "../../data-source";
-import { Contacts } from "../../entity/contacts.entities";
 import { User } from "../../entity/user.entities";
 import { AppError } from './../../errors/ErrorHandler/index';
 import { IUserRequest, IUserUpdate } from './../../interface/users/index';
