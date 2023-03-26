@@ -22,5 +22,5 @@ export const StyleSearch = styled.div`
     color: ${colors.colorGrey1}
   }
 
-  
+
 `

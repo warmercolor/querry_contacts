@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../styles/themes/defaultTheme';
 
 export const StyleLogo = styled.div`
+  text-align: center;
   h1{
     font-size: 2.5rem;
     color: ${colors.colorBalck};

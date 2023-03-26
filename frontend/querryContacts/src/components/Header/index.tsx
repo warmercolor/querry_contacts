@@ -13,7 +13,7 @@ export const Header = ({children}: IChildren) => {
       {children}
       <div className='newContact'>
         <strong className='count'>3 contatos</strong>
-        <a href="/" className='btn'>Novo Contato</a>
+        <a href="/new" className='btn'>Novo Contato</a>
       </div>
     </StyleHeader>
   )

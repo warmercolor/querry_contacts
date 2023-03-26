@@ -1,12 +1,12 @@
 import GlobalStyles from '../../styles/global'
 import { Container } from './style'
-import { Contacts } from './../../Pages/Contacts';
+import { RoutesUrl } from '../../Routes';
 
 function App() {
   return(
   <Container>
       <GlobalStyles />
-      <Contacts />
+      <RoutesUrl/>
   </Container>
   )
 }

@@ -28,7 +28,7 @@ export const ListContacts = () => {
         </div>
 
         <div className="actions">
-          <a href="/">
+          <a href="/edit">
             <img src={edit} alt="Editar/Edit" />
           </a>
           <button type='button'>
@@ -52,7 +52,7 @@ export const ListContacts = () => {
         </div>
 
         <div className="actions">
-          <a href="/">
+          <a href="/edit">
             <img src={edit} alt="Editar/Edit" />
           </a>
           <button type='button'>
