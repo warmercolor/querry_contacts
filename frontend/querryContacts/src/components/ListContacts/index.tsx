@@ -1,9 +1,14 @@
-import { StyleCard, StyleList } from './style';
+import { StyleList } from './style';
 import arrow from '../../assets/arrow.png'
-import trash from '../../assets/trash.png'
-import edit from '../../assets/edit.png'
+import { CardContact } from '../CardContact';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+
 
 export const ListContacts = () => {
+
+  const { contacts } = useContext(AuthContext)
+
   return (
     <StyleList>
       <header>
@@ -12,78 +17,15 @@ export const ListContacts = () => {
           <img src={arrow} alt="Seta/Arrow" />
         </button>
       </header>
-      <StyleCard>
-        <div className='info'>
-          <div className='contact-name'>
-          <strong>
-          Thaisa Alice
-          </strong>
-          </div>
-          <span>
-            thaisaalice@mail.com
-          </span>
-          <span>
-            (44)44444-4444
-          </span>
-        </div>
-
-        <div className="actions">
-          <a href="/edit">
-            <img src={edit} alt="Editar/Edit" />
-          </a>
-          <button type='button'>
-            <img src={trash} alt="Lixo/Trash" />
-          </button>
-        </div>
-      </StyleCard>
-      <StyleCard>
-        <div className='info'>
-          <div className='contact-name'>
-          <strong>
-          Thaisa Alice
-          </strong>
-          </div>
-          <span>
-            thaisaalice@mail.com
-          </span>
-          <span>
-            (44)44444-4444
-          </span>
-        </div>
-
-        <div className="actions">
-          <a href="/edit">
-            <img src={edit} alt="Editar/Edit" />
-          </a>
-          <button type='button'>
-            <img src={trash} alt="Lixo/Trash" />
-          </button>
-        </div>
-      </StyleCard>
-      <StyleCard>
-        <div className='info'>
-          <div className='contact-name'>
-          <strong>
-          Thaisa Alice
-          </strong>
-          </div>
-          <span>
-            thaisaalice@mail.com
-          </span>
-          <span>
-            (44)44444-4444
-          </span>
-        </div>
-
-        <div className="actions">
-          <a href="/">
-            <img src={edit} alt="Editar/Edit" />
-          </a>
-          <button type='button'>
-            <img src={trash} alt="Lixo/Trash" />
-          </button>
-        </div>
-      </StyleCard>
+      {Array.isArray(contacts) && (contacts.map((c) => (
+    <CardContact
+    key={c.id}
+    name={c.name}
+    email={c.email}
+    phone={c.phone}
+    id={c.id}
+  />
+  )))}
     </StyleList>
   )
 }

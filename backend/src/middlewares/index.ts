@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { AppError } from '../errors/ErrorHandler/index';
-import jwt from 'jsonwebtoken'
+import jwt, { JwtPayload } from 'jsonwebtoken'
+import { userInfo } from 'os';
 
 class Middlewares {
     static async authorization(
@@ -25,11 +26,10 @@ class Middlewares {
         jwt.verify(
             token,
             process.env.SECRET_KEY as string,
-            (error, decoded: any) => {
+            (error, decoded: JwtPayload) => {
                 if (error) {
                     return response.status(401).json({ message: "Invalid Token" })
                 }
-
                 return next()
             }
         )

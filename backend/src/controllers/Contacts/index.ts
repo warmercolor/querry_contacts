@@ -20,12 +20,11 @@ class ClassContactsController {
     }
 
     async createContact(request: Request, response: Response) {
-        const { id } = request.body
-        const contact = request.body
-
-        const newContact = await ContactsServiceInstance.createContact(contact, id)
-
-        response.status(201).json(newContact)
+        const token = request.headers.authorization
+        const data = request.body
+        const result = await ContactsServiceInstance.createContact(data, token)
+        console.log(data)
+        return response.status(201).json(result)
     }
 
     async updateContact(request: Request, response: Response) {

@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
 import { NewContact } from '../Pages/NewContact';
 import { Register } from '../Pages/Register';
-import { Contacts } from './../Pages/Contacts';
-import { Login } from './../Pages/Login/index';
-import { EditContact } from './../Pages/EditContact/index';
+import { Contacts } from '../Pages/Contacts';
+import { Login } from '../Pages/Login/index';
+import { EditContact } from '../Pages/EditContact/index';
 
 
 export function RoutesUrl() {

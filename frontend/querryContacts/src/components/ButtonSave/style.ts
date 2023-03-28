@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { colors } from './../../styles/themes/defaultTheme';
 
-export const StyleButtonSave = styled.div`
+export const StyleButtonSave = styled.button`
   width: 100%;
   height: 3.25rem;
   display: flex;

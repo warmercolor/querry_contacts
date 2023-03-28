@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from './../../styles/themes/defaultTheme';
 
-export const StyleNewContact = styled.section`
+export const StyleNewContact = styled.form`
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -20,7 +20,7 @@ export const StyleNewContact = styled.section`
           border-color: ${colors.primary.colorSecundary};
         }
       }
-
+      
     @media (max-width: 400px) {
     width: 100%;
     }

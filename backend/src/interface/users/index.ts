@@ -1,5 +1,5 @@
 
-import { IContactRequest } from './../contacts/index'
+import { IContactRequest, IContact } from './../contacts/index'
 
 export interface IUserRequest {
     name: string
@@ -20,6 +20,20 @@ export interface IUser {
     createdAt: Date
     updatedAt: Date
 }
+
+export interface IUserProfile {
+    token: string
+    id: string
+    name: string
+    lastname: string
+    email: string
+    phone: string
+    password: string
+    createdAt: Date
+    updatedAt: Date
+    contacts: IContact[]
+}
+
 
 
 export interface IUserLogin {

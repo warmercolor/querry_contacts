@@ -6,7 +6,7 @@ import Middlewares from '../middlewares/index';
 export const routerUsers = Router()
 
 routerUsers.get(
-    '', Middlewares.authorization, UsersController.getAllUsers
+    '', UsersController.getAllUsers
 )
 
 routerUsers.get(

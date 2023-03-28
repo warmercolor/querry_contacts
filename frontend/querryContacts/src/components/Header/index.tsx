@@ -2,7 +2,7 @@ import { StyleHeader } from './style';
 import { Logo } from '../Logo';
 import { ReactNode } from 'react';
 
-interface IChildren{
+export interface IChildren{
   children: ReactNode
 }
 

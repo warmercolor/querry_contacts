@@ -26,7 +26,7 @@ class LoginServices {
 
         const token: any = jwt.sign(
             {
-            
+                id: user?.id
             },
             process.env.SECRET_KEY as string,
             {

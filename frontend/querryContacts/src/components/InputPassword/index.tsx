@@ -7,6 +7,7 @@ export interface IProps{
     label: string
     name?: string
     error?: string
+    register: Function
     [rest: string]:any
 }
 
@@ -19,6 +20,7 @@ export function InputPassword({ label, register, name, error, ...rest }: IProps 
         <StyleInputPassword>
         <input
             type={showPassword ? 'password' : 'text'}
+            {...register(name)}
             {...rest}
             >
         </input>

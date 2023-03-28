@@ -9,7 +9,7 @@ class LoginControllers {
 
         const token = await LoginService.createLogin(data)
 
-        return response.status(200).json({ token })
+        return response.status(200).json({token})
     }
 }
 

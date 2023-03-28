@@ -1,13 +1,16 @@
 import GlobalStyles from '../../styles/global'
 import { Container } from './style'
-import { RoutesUrl } from '../../Routes';
+import { RoutesUrl } from '../../routes';
+import { Authorization } from '../../context/AuthContext';
 
 function App() {
   return(
-  <Container>
+  <Authorization>
+    <Container>
       <GlobalStyles />
       <RoutesUrl/>
-  </Container>
+    </Container>
+  </Authorization>
   )
 }
 
