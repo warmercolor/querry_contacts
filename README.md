@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <img alt="QuerryContacts" title="QuerryContacts" src="./bg-querrycontacts.png" width="100px" />
+  <img alt="QuerryContacts" title="QuerryContacts" src="./bg-querrycontacts.png" width="1000px" />
 </h1>
 
 <h1 align="center">
@@ -433,6 +433,3 @@ Caso queira acessar mais rotas, aqui estão todas as rotas que você pode utiliz
 - `GET /contacts` - Lista todos os usuarios de um contato
 - `PATCH /users/:id` - Atualiza um contato pelo ID
 - `DELETE /contatcs/:id` - Exclui um contato do usuario pelo ID
-
-
-Feito com ♥ por T. Alice :wave:
