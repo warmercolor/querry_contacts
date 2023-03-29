@@ -7,7 +7,7 @@ import { AuthContext } from '../../context/AuthContext';
 
 export const ListContacts = () => {
 
-  const { filtered, contacts} = useContext(AuthContext)
+  const { filtered, contacts } = useContext(AuthContext)
 
   return (
     <StyleList>
@@ -26,6 +26,7 @@ export const ListContacts = () => {
       email={c.email}
       phone={c.phone}
       id={c.id}
+      contactsSave={c}
       />
       )))}
     </StyleList>

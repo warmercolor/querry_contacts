@@ -1,10 +1,11 @@
-import { createContext, useState, useLayoutEffect } from 'react'
+import { createContext, useState, useLayoutEffect, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { IUserLogin, IUserProfile } from '../../../../../backend/src/interface/users';
 import { IContact} from '../../../../../backend/src/interface/contacts';
 import { IChildren } from './../../components/Header/index'
 import { ISubmit } from './../../Pages/Register/index'
 import { Api } from '../../service'
+import { ICard } from './../../components/CardContact/index';
 
 
 export interface IUser{
@@ -32,6 +33,9 @@ export interface IAuthContext{
   filtered: IContact[]
   filter: Function
   logout: Function
+  editContact: Function
+  saveContact: IContact | undefined
+  setSaveContact: (value: IContact) => void
 }
 
 export interface IData{
@@ -46,6 +50,7 @@ export const Authorization = ({children}: IChildren) => {
   const [ user, setUser ] = useState<IUser>({} as IUser)
   const [ loading, setLoading ] = useState(true)
   const [ contacts, setContacts ] = useState<IContact[]>({} as IContact[])
+  const [ saveContact, setSaveContact ] = useState<IContact>()
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -101,7 +106,6 @@ export const Authorization = ({children}: IChildren) => {
 
   const createContacts = async (data: IContact) => {
     try {
-      console.log(data)
       const result = await Api.post("/contacts", data)
       setContacts([...contacts, result.data])
       const toNavigate = location.state?.from?.pathname || '/contacts'
@@ -124,18 +128,21 @@ export const Authorization = ({children}: IChildren) => {
     }
   }
 
-  const editContacts = async (id: string) => {
-    try{
-      await Api.delete(`/contacts/${id}`)
-      const listContacts = contacts.filter((cont) => {
-          return cont.id !== id
-      })
-      setContacts(listContacts)
+    async function editContact(contact: ICard) {
+        try{
+          await Api.patch(`/contacts/${contact.id}`)
+          const listContacts = contacts.filter((cont) => {
+              return cont.id !== contact.id
+          })
+          setContacts(listContacts)
+          const toNavigate = location.state?.from?.pathname || '/contacts'
+            navigate(toNavigate, { replace: true })
+        }
+        catch ( error ) {
+            console.log(error)
+        }
     }
-    catch ( error ) {
-        console.log(error)
-    }
-  }
+
 
   const [ filtered, setFiltered ] = useState<IContact[]>([])
 
@@ -153,7 +160,7 @@ export const Authorization = ({children}: IChildren) => {
   }
 
   return (
-    <AuthContext.Provider value={{user, setUser, loading, loginUser, contacts, setContacts, registerUser, createContacts, deleteContacts, filtered, filter, logout}}>
+    <AuthContext.Provider value={{user, setUser, loading, loginUser, contacts, setContacts, registerUser, createContacts, deleteContacts, filtered, filter, logout, editContact, saveContact, setSaveContact}}>
     {children}
   </AuthContext.Provider>
   )

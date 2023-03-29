@@ -12,10 +12,11 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.use('/users', routerUsers)
-app.use('/contacts', routerContacts)
-app.use('/login', routerLogin)
-app.use('/profile', routerProfile)
-app.use(errorHandler)
 
-export default app
+    app.use('/users', routerUsers)
+    app.use('/contacts', routerContacts)
+    app.use('/login', routerLogin)
+    app.use('/profile', routerProfile)
+    app.use(errorHandler)
+    
+    export default app
