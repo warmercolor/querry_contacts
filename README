@@ -1,19 +1,19 @@
 
-<h1 align="center">
+
   <img alt="QuerryContacts" title="QuerryContacts" src="./bg-querrycontacts.png" width="100px" />
-</h1>
 
-<h1 align="center">
+
+
   Querry Contacts - Full Satck
-</h1>
 
-<p align = "center">
+
+
 Este é a aplicação QuerryContacts - Uma aplicação feita para você ter um controle melhor em seus contatos, onde fica um fácil acesso em um site.
-</p>
 
-<h2 align="center">
+
+
   Para Rodar a aplicação irá precisar seguir alguns passos
-</h2>
+
 
 
 ### PASSO 1 - INSTALAR AS DEPENDÊNCIAS BACKEND
@@ -93,9 +93,9 @@ Veja que na pasta *backend*  tem um arquivo chamado `workspace.json`, você pode
 <img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo4.png" width="100px" />
 
 
-<p align="center">
+
   <a href="#endpoints">Endpoints</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</p>
+
 
 ## **Endpoints**
 
