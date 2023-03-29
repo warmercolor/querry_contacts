@@ -23,12 +23,8 @@ export const NewContact = () => {
     resolver: yupResolver(schema)
   })
 
-  const testeFunc = (testeParam: any) => {
-    console.log(testeParam)
-    const teste = createContacts(testeParam)
-  }
   return (
-    <form onSubmit={handleSubmit(testeFunc)}>
+    <StyleNewContact onSubmit={handleSubmit(createContacts)}>
       <HeaderContact  title="Novo Contato"/>
       <Input
         type='text'
@@ -51,14 +47,14 @@ export const NewContact = () => {
         name='email'
         register={register}
       />
-      <Input
-        label='phone'
+      <InputMask
+      className='input-mask'
         type='text'
-        name='phone'
+        mask='(99) 9999-9999'
         placeholder="(99) 9999-9999"
-        register={register}
+        {...register('phone')}
       />
       <ButtonSave type='submit' alternation="Criar Contato" />
-    </form>
+    </StyleNewContact>
   )
 }

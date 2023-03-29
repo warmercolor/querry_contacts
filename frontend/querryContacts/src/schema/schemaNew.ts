@@ -13,10 +13,6 @@ export const schema = yup.object().shape({
     .required('Adicione um email'),
     phone: yup
     .string()
-    .matches(
-      /^\+(?:[0-9] ?){6,14}[0-9]$/,
-      'Número de telefone inválido. Insira o DDD e o número com DDI.'
-    )
     .required('Número de telefone é obrigatório'),
 })
 

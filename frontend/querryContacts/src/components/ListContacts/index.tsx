@@ -7,7 +7,7 @@ import { AuthContext } from '../../context/AuthContext';
 
 export const ListContacts = () => {
 
-  const { contacts } = useContext(AuthContext)
+  const { filtered, contacts} = useContext(AuthContext)
 
   return (
     <StyleList>
@@ -17,15 +17,17 @@ export const ListContacts = () => {
           <img src={arrow} alt="Seta/Arrow" />
         </button>
       </header>
-      {Array.isArray(contacts) && (contacts.map((c) => (
-    <CardContact
-    key={c.id}
-    name={c.name}
-    email={c.email}
-    phone={c.phone}
-    id={c.id}
-  />
-  )))}
+      {
+      ([...filtered.length > 0 ?
+      filtered : contacts].map((c) => (
+      <CardContact
+      key={c.id}
+      name={c.name}
+      email={c.email}
+      phone={c.phone}
+      id={c.id}
+      />
+      )))}
     </StyleList>
   )
 }

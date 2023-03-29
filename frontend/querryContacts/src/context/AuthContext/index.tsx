@@ -29,6 +29,9 @@ export interface IAuthContext{
   registerUser: (data: IUser) => void
   createContacts: (data: IContact) => void
   deleteContacts: (id: string) => void
+  filtered: IContact[]
+  filter: Function
+  logout: Function
 }
 
 export interface IData{
@@ -101,6 +104,8 @@ export const Authorization = ({children}: IChildren) => {
       console.log(data)
       const result = await Api.post("/contacts", data)
       setContacts([...contacts, result.data])
+      const toNavigate = location.state?.from?.pathname || '/contacts'
+            navigate(toNavigate, { replace: true })
     } catch (error) {
       console.log(error)
     }
@@ -119,11 +124,37 @@ export const Authorization = ({children}: IChildren) => {
     }
   }
 
+  const editContacts = async (id: string) => {
+    try{
+      await Api.delete(`/contacts/${id}`)
+      const listContacts = contacts.filter((cont) => {
+          return cont.id !== id
+      })
+      setContacts(listContacts)
+    }
+    catch ( error ) {
+        console.log(error)
+    }
+  }
+
+  const [ filtered, setFiltered ] = useState<IContact[]>([])
+
+  const filter = (search: string) => {
+    const filterContacts = contacts.filter((element) =>
+      element.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f-]/g, '')
+      .includes(search.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f-]/g, '')))
+    setFiltered(filterContacts)
+  }
+
+  const logout = () => {
+    localStorage.clear()
+    const toNavigate = location.state?.from?.pathname || '/'
+    navigate(toNavigate, { replace: true })
+  }
+
   return (
-    <AuthContext.Provider value={{user, setUser, loading, loginUser, contacts, setContacts, registerUser, createContacts, deleteContacts}}>
+    <AuthContext.Provider value={{user, setUser, loading, loginUser, contacts, setContacts, registerUser, createContacts, deleteContacts, filtered, filter, logout}}>
     {children}
   </AuthContext.Provider>
   )
 }
-
-
