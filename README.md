@@ -4,7 +4,7 @@
 </h1>
 
 <h1 align="center">
-  Querry Contacts - Backend
+  Querry Contacts - Fullstack
 </h1>
 
 <p align = "center">
@@ -12,7 +12,7 @@ Este é a aplicação QuerryContacts - Uma aplicação feita para você ter um c
 </p>
 
 <h2 align="center">
-  Para Rodar a aplicação irá precisar seguir alguns passos
+  Vamos começar pelo backend. Para Rodar a aplicação irá precisar seguir alguns passos
 </h2>
 
 
