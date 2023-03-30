@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <img alt="QuerryContacts" title="QuerryContacts" src="./bg-querrycontacts.png" width="100px" />
+  <img alt="QuerryContacts" title="QuerryContacts" src="./bg-querrycontacts.png" width="1000px" />
 </h1>
 
 <h1 align="center">
@@ -49,11 +49,11 @@ $ yarn migration:generate
 
 Note que ele criou uma pasta chamada *migrations*. Siga as imagens para entender como colocar a sua migration no projeto:
 
-<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo1.png" width="100px" />
+<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo1.png" width="500px" />
 
 Acesse o arquivo gerado, e copie o  nome sublinhado em vermelho:
 
-<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo2.png" width="100px" />
+<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo2.png" width="500px" />
 
 Em seguida vá até o arquivo data-source, faça o import desse arquivo, e coloque em *migrations:*, dentro do array, se você gerar mais de uma, basta acrecentar uma virgula, e seguir os mesmos passos.
 
