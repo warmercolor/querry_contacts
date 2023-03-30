@@ -1,10 +1,10 @@
 
 <h1 align="center">
-  <img alt="QuerryContacts" title="QuerryContacts" src="./bg-querrycontacts.png" width="1000px" />
+  <img alt="QuerryContacts" title="QuerryContacts" src="./bg-querrycontacts.png" width="100px" />
 </h1>
 
 <h1 align="center">
-  Querry Contacts - Full Satck
+  Querry Contacts - Backend
 </h1>
 
 <p align = "center">
@@ -49,11 +49,11 @@ $ yarn migration:generate
 
 Note que ele criou uma pasta chamada *migrations*. Siga as imagens para entender como colocar a sua migration no projeto:
 
-<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo1.png" width="500px" />
+<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo1.png" width="100px" />
 
 Acesse o arquivo gerado, e copie o  nome sublinhado em vermelho:
 
-<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo2.png" width="500px" />
+<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo2.png" width="100px" />
 
 Em seguida vá até o arquivo data-source, faça o import desse arquivo, e coloque em *migrations:*, dentro do array, se você gerar mais de uma, basta acrecentar uma virgula, e seguir os mesmos passos.
 
@@ -88,9 +88,10 @@ Incrível! Abra seu navegador e digite `http://locahost:3000`. Agora você pode 
 Veja que na pasta *backend*  tem um arquivo chamado `workspace.json`, você pode acessar ele pelo insomnia, acessando dessa forma: 
 
 1 - Abra o Insomnia REST Client.
+
 2 - A partir da lista de Insomnia, selecione Importar / Exportar.
 
-<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo4.png" width="500px" />
+<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo4.png" width="100px" />
 
 
 <p align="center">
@@ -433,3 +434,66 @@ Caso queira acessar mais rotas, aqui estão todas as rotas que você pode utiliz
 - `GET /contacts` - Lista todos os usuarios de um contato
 - `PATCH /users/:id` - Atualiza um contato pelo ID
 - `DELETE /contatcs/:id` - Exclui um contato do usuario pelo ID
+
+<h1 align="center">
+  Querry Contacts - Frontend
+</h1>
+
+## 🚀 Principais Tecnologias
+<div>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> 
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+    <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" /> 
+</div><br>
+
+## 📚 Outras bibliotecas 
+<p>Yup</p>
+<p>Hook form</p>
+<p>React router dom</p>
+<p>Axios</p>
+<p>React-toastify</p>
+
+## 🛠 Funcionalidades
+<p>✔ Login</p>
+<p>✔ Cadastro</p>
+<p>✔ Criar um contato</p>
+<p>✔ Listar contatos</p>
+<p>✔ Proteção de rotas</p>
+<p>✔ Editar contatos</p>
+<p>✔ Excluir um contato</p>
+<p>✔ Responsividade</p>
+
+## 🛠 Em desenvolvimento:
+<p>Erros nos Inputs</p>
+<p>Pop-up para poder acusar alguns erros</p>
+<p>Edição de perfil</p>
+<p>Exclusão de perfil</p>
+<p>Imagem de perfil</p>
+<p>Login com redes sociais</p>
+<p>Chat entre usuarios</p>
+
+## 🔥 Como rodar a aplicação?
+
+Entre no repositorio *querryContacts*:
+
+```sh
+
+$ cd frontend/querryContacts
+
+```
+
+Instale as dependencias:
+
+```sh
+
+$ yarn
+
+```
+
+Tudo pronto pra iniciar o projeto:
+
+```sh
+
+$ yarn dev
+
+```
