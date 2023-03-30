@@ -91,7 +91,7 @@ Veja que na pasta *backend*  tem um arquivo chamado `workspace.json`, você pode
 
 2 - A partir da lista de Insomnia, selecione Importar / Exportar.
 
-<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo4.png" width="100px" />
+<img alt="QuerryContacts" title="QuerryContacts" src="./doc/passo4.png" width="300px" />
 
 
 <p align="center">
